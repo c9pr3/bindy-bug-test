@@ -22,7 +22,7 @@ public final class CsvPackageTest {
         String out;
 
         System.out.print("Checking header and footer...should be OK...");
-        final CsvPackageHeader header = new CsvPackageHeader("agency1", "00.01");
+        final CsvEntryHeader header = new CsvEntryHeader("agency1", "00.01");
         final CsvEntryFooter footer = new CsvEntryFooter("agency1", LocalTime.now(), 1L);
         final CsvPackage csvPackage = new CsvPackage(header, footer);
         final ByteArrayOutputStream stringArrayOutputStream = new ByteArrayOutputStream();

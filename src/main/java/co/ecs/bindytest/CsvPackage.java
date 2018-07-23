@@ -8,14 +8,14 @@ import org.apache.camel.dataformat.bindy.annotation.Link;
 import org.apache.camel.dataformat.bindy.annotation.LinkType;
 import org.apache.camel.dataformat.bindy.annotation.OneToMany;
 
-@CsvRecord(separator = ";", crlf = "UNIX", allowEmptyStream = true, autospanLine = true, endWithLineBreak = true)
+@CsvRecord(separator = ";", crlf = "UNIX", allowEmptyStream = true)
 @SuppressWarnings("WeakerAccess")
 public final class CsvPackage implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Link(linkType = LinkType.OneToOne)
-    private final CsvPackageHeader header;
+    private final CsvEntryHeader header;
 
     @Link
     @OneToMany
@@ -24,7 +24,7 @@ public final class CsvPackage implements Serializable {
     @Link(linkType = LinkType.OneToOne)
     private final CsvEntryFooter footer;
 
-    public CsvPackage(final CsvPackageHeader header, final CsvEntryFooter footer) {
+    public CsvPackage(final CsvEntryHeader header, final CsvEntryFooter footer) {
         this.header = header;
         this.footer = footer;
     }
