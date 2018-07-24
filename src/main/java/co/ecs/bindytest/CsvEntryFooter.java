@@ -20,7 +20,7 @@ public final class CsvEntryFooter implements Serializable {
     @DataField(pos = 3, position = 3, length = 6, required = true)
     private final LocalTime time;
 
-    @DataField(pos = 4, position = 5, length = 1, required = true)
+    @DataField(pos = 4, position = 4, length = 1, required = true)
     private final Long counter;
 
     public CsvEntryFooter(final String agencyNo, final LocalTime time, final Long counter) {
